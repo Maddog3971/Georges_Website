@@ -11,3 +11,33 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<script>
+  
+  const people = [
+    { id: 1, name: "Ivan Ivanov", age: 30, city: "Sofia" },
+    { id: 2, name: "Maria Petrova", age: 25, city: "Plovdiv" },
+    { id: 3, name: "Georgi Georgiev", age: 40, city: "Varna" },
+    ];
+  
+  function searchPerson() {
+    const input = document.getElementById("personId");
+    const result = document.getElementById("result");
+    const id = Number(input.value);
+
+  if(!id) {
+    result.textContent = "Please enter a valid ID!";
+    return;
+  }
+
+  const person = people.find(p => p.id === id);
+
+  if (person) {
+    result.textContent = 'ID: ${person.id}\nName: ${person.name}\nAge: ${person.age}\nCity{person.city}';
+  } else {
+    result.textContent = "Theres no person with this ID.";
+  }
+  }
+</script>
+</body>
+</html>
